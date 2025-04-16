@@ -14,21 +14,6 @@ import { useFrameSDK } from "~/hooks/useFrameSDK";
 import { baseUSDC, optimismUSDC } from "@daimo/contract";
 import { getAddress } from "viem";
 
-function ExampleCard() {
-  return (
-    <Card>
-      <CardHeader>
-        <CardTitle>Welcome to the vibes.engineering template</CardTitle>
-        <CardDescription>
-          This is an example card that you can customize or remove
-        </CardDescription>
-      </CardHeader>
-      <CardContent>
-        <Label>Place content in a Card here.</Label>
-      </CardContent>
-    </Card>
-  );
-}
 
 function PaymentComponent() {
   const [address, setAddress] = useState<`0x${string}`>(
@@ -87,7 +72,6 @@ export default function Frame() {
 
   return (
     <div className="w-[300px] mx-auto py-2 px-2">
-      <ExampleCard />
       <PaymentComponent />
     </div>
   );
