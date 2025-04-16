@@ -32,14 +32,14 @@ function ExampleCard() {
 
 function PaymentComponent() {
   const [address, setAddress] = useState<`0x${string}`>(
-    "0x32e3C7fD24e175701A35c224f2238d18439C7dBC", // ethereum protocol guild
+    "0x6d9fFaede2c6CD9bb48becE230ad589e0E0D981c",
   );
 
   return (
     <Card className="mt-4">
-      <CardHeader>
-        <CardTitle>Payment</CardTitle>
-        <CardDescription>Pay $1 using USDC on Base</CardDescription>
+      <CardHeader className="bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500 text-white rounded-t-lg">
+        <CardTitle className="animate-pulse">MySpace Payment Zone 💫</CardTitle>
+        <CardDescription className="text-white/90">Send 1 USDC on Base ✨</CardDescription>
       </CardHeader>
       <CardContent className="flex flex-col gap-4">
         <div className="flex flex-col gap-2">
@@ -58,15 +58,20 @@ function PaymentComponent() {
           />
         </div>
         <div className="flex justify-center">
-          <DaimoPayButton
-            appId="pay-demo" /* Example app ID you can use for prototyping */
-            toChain={baseUSDC.chainId}
-            toUnits="1.00" /* $1.00 USDC */
-            toToken={getAddress(baseUSDC.token)}
-            toAddress={address}
-            onPaymentStarted={(e) => console.log(e)}
-            onPaymentCompleted={(e) => console.log(e)}
-          />
+          <div className="group relative cursor-pointer">
+            <div className="absolute -inset-1 rounded-lg bg-gradient-to-r from-pink-600 to-purple-600 opacity-75 blur transition duration-1000 group-hover:opacity-100"></div>
+            <div className="relative px-6 py-3 bg-black rounded-lg leading-none flex items-center">
+              <DaimoPayButton
+                appId="pay-demo"
+                toChain={baseUSDC.chainId}
+                toUnits="1.00"
+                toToken={getAddress(baseUSDC.token)}
+                toAddress={address}
+                onPaymentStarted={(e) => console.log(e)}
+                onPaymentCompleted={(e) => console.log(e)}
+              />
+            </div>
+          </div>
         </div>
       </CardContent>
     </Card>
