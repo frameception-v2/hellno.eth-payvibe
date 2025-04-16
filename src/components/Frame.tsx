@@ -21,12 +21,12 @@ function PaymentComponent() {
   );
 
   return (
-    <Card className="mt-4">
-      <CardHeader className="bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500 text-white rounded-t-lg">
-        <CardTitle className="animate-pulse">MySpace Payment Zone 💫</CardTitle>
-        <CardDescription className="text-white/90">Send 1 USDC on Base ✨</CardDescription>
+    <Card className="mt-8 shadow-xl">
+      <CardHeader className="bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500 text-white rounded-t-lg p-8">
+        <CardTitle className="animate-pulse text-2xl mb-2">Vibey Daimo Payment Test 💫</CardTitle>
+        <CardDescription className="text-white/90 text-lg">Send 1 USDC on Base ✨</CardDescription>
       </CardHeader>
-      <CardContent className="flex flex-col gap-4">
+      <CardContent className="flex flex-col gap-6 p-8">
         <div className="flex flex-col gap-2">
           <Label htmlFor="address">Recipient Address</Label>
           <input
@@ -71,7 +71,7 @@ export default function Frame() {
   }
 
   return (
-    <div className="w-[300px] mx-auto py-2 px-2">
+    <div className="w-[400px] mx-auto py-4 px-4">
       <PaymentComponent />
     </div>
   );
